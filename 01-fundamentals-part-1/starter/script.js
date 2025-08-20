@@ -149,3 +149,43 @@ console.log(z, y);
 //parentheses override everything
 const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
+
+//CODING CHALLENGE #1: BMI CALCULATOR
+
+// Test Data 1
+const massMark1 = 78;
+const heightMark1 = 1.69;
+const massJohn1 = 92;
+const heightJohn1 = 1.95;
+
+//calculate BMI
+const BMIMark1 = massMark1 / (heightMark1 * heightMark1);
+const BMIJohn1 = massJohn1 / (heightJohn1 ** 2);
+
+//markHigherBMI1
+const markHigherBMI1 = BMIMark1 > BMIJohn1;
+
+//Results
+console.log("Test Data 1:");
+console.log("Mark's BMI:", BMIMark1.toFixed(2));
+console.log("John's BMI:", BMIJohn1.toFixed(2));
+console.log("Does Mark have a higher BMI?", markHigherBMI1);
+
+// Test Data 2
+const massMark2 = 95;
+const heightMark2 = 1.88;
+const massJohn2 = 85;
+const heightJohn2 = 1.76;
+
+//calculate BMI
+const BMIMark2 = massMark2 / (heightMark2 ** 2);
+const BMIJohn2 = massJohn2 / (heightJohn2 * heightJohn2);
+
+//markHigherBMI2
+const markHigherBMI2 = BMIMark2 > BMIJohn2;
+
+//Results
+console.log("Test Data 2:");
+console.log("Mark's BMI:", BMIMark2.toFixed(2));
+console.log("John's BMI:", BMIJohn2.toFixed(2));
+console.log("Does Mark have a higher BMI?", markHigherBMI2);
