@@ -437,3 +437,97 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
   console.log("Someone else should drive...");
 }
+
+//complex logic with parethesis
+const age1 = 20;
+const hasPermission = true;
+const hasExperience = false;
+
+if ((age >= 18 || hasPermission) && hasExperience) {
+  console.log("Approved to drive");
+} else {
+  console.log("Not approved to drive");
+}
+
+//practice logical operators
+//exercise 1 - club entry system
+const age2 = 19;
+const hasID = true;
+const isVIP = false;
+
+if ((age >= 21 && hasID) || isVIP) {
+  console.log("Welcome to the club!");
+} else {
+  console.log("Sorry, you cannot enter");
+}
+
+//exercise 2 - weather advisory
+const temperature = 25; // Celsius
+const isRaining = false;
+const isWindy = true;
+
+if (temperature >= 20 && temperature <= 30 && !isRaining && !isWindy) {
+  console.log("Perfect day!");
+} else if (temperature >= 15 && temperature <= 35 && !isRaining) {
+  console.log("Good day!");
+} else {
+  console.log("Stay inside!");
+}
+
+//ternary operator
+const age3 = 23;
+const drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log(drink);
+let drink2;
+if (age >= 18) {
+  drink2 = "wine 🍷";
+} else {
+  drink2 = "water 💧";
+}
+console.log(drink2);
+console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
+
+//ternary vs if else
+const status = score >= 60 ? "passed" : "failed";
+const message = isLoggedIn ? "Welcome back!" : "Please log in";
+const discount = isPremium ? 0.2 : 0.1;
+if (score >= 90) {
+  console.log("Excellent!");
+  grade = "A";
+  bonus = true;
+} else if (score >= 80) {
+  console.log("Good job!");
+  grade = "B";
+}
+
+// practice ternary
+//exercise 1 - status messages
+
+// login status
+const isLoggedIn = true;
+let welcomeMessage = isLoggedIn ? "Welcome back!" : "Please sign in";
+console.log(welcomeMessage);
+
+// 2. Price with discount
+const isPremium = false;
+let price = isPremium ? 100 * 0.8 : 100;
+console.log(`Price: $${price}`);
+
+//exercise 2 - smart responses
+
+const score = 85;
+const weather = "sunny";
+const battery = 15;
+
+const scoreMessage = `Your score: ${score} (${score >= 75 ? "Passed" : "Failed"})`;
+const weatherMessage = `Weather is ${weather} (${weather === "sunny" ? "Great for outdoor activities" : "Stay inside"})`;
+const batteryMessage = `Battery: ${battery}% (${battery < 20 ? "Low battery warning" : "Battery OK"})`;
+
+console.log(scoreMessage);
+console.log(weatherMessage);
+console.log(batteryMessage);
+
+//final challenge
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
