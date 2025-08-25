@@ -193,136 +193,247 @@
 //HOUR 3 - STRINGS AND DECISION
 
 // Strings and Template Literals
-const firstName = "Jonas";
-const job = "teacher";
-const birthYear = 1991;
-const year = 2037;
+// const firstName = "Jonas";
+// const job = "teacher";
+// const birthYear = 1991;
+// const year = 2037;
 
-const jonas =
-  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
-console.log(jonas);
+// const jonas =
+//   "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+// console.log(jonas);
 
-//the modern way
-const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+// //the modern way
+// const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
 
-//template  literal superpowers
-console.log(`I'm ${2037 - 1991} years old`);
-console.log(`Math works: ${2 + 3} equals five`);
-console.log(`Comparisons too: ${5 > 3}`);
+// //template  literal superpowers
+// console.log(`I'm ${2037 - 1991} years old`);
+// console.log(`Math works: ${2 + 3} equals five`);
+// console.log(`Comparisons too: ${5 > 3}`);
 
-//practice template literals
-//exercise 1 - personal introduction
-// exercise 1
-const myName = "Angel";
-const myAge = 20;
-const myJob = "student";
-const currentYear = 2025;
+// //practice template literals
+// //exercise 1 - personal introduction
+// // exercise 1
+// const myName = "Angel";
+// const myAge = 20;
+// const myJob = "student";
+// const currentYear = 2025;
 
-const introduction = `Hi, I'm ${myName}, a ${myAge} year old ${myJob}!`;
-console.log(introduction);
+// const introduction = `Hi, I'm ${myName}, a ${myAge} year old ${myJob}!`;
+// console.log(introduction);
 
-// exercise 2 - math in templates
-const myAge2 = 21;
-const currentYear2 = 2025;
+// // exercise 2 - math in templates
+// const myAge2 = 21;
+// const currentYear2 = 2025;
 
-const message = `Born in ${currentYear2 - myAge2}, 10*5 = ${10 * 5}, Adult: ${myAge2 >= 18}`;
-console.log(message);
+// const message = `Born in ${currentYear2 - myAge2}, 10*5 = ${10 * 5}, Adult: ${myAge2 >= 18}`;
+// console.log(message);
 
-// if else statements
-const age = 15;
+// // if else statements
+// const age = 15;
 
-if (age >= 18) {
-  console.log("Sarah can start driving license 🚗");
+// if (age >= 18) {
+//   console.log("Sarah can start driving license 🚗");
+// } else {
+//   const yearsLeft = 18 - age;
+//   console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+// }
+
+// //variable assignment with decisions
+// const birthYear2 = 2005;
+
+// let century;
+// if (birthYear <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21;
+// }
+// console.log(century); // 21
+
+// //real world decision making
+// const score = 85;
+
+// if (score >= 60) {
+//   console.log(`You passed with ${score} points! 🎉`);
+//   console.log("Congratulations!");
+// } else {
+//   const pointsNeeded = 60 - score;
+//   console.log(`You failed. Need ${pointsNeeded} more points.`);
+// }
+
+// //exercise 1 - grade calculator
+// const testScore = 78;
+
+// if (testScore >= 90) {
+//   console.log("Excellent! Grade A");
+// } else if (testScore >= 80) {
+//   console.log("Good job! Grade B");
+// } else if (testScore >= 70) {
+//   console.log("Not bad! Grade C");
+// } else if (testScore >= 60) {
+//   console.log("You passed! Grade D");
+// } else {
+//   console.log("You failed! Study harder");
+// }
+
+// //exercise 2 - age verification
+// const userAge = 20;
+
+// if (userAge >= 18) {
+//   console.log("Welcome! You can access all content");
+// } else if (userAge >= 13) {
+//   console.log("Welcome! Restricted content only");
+// } else {
+//   console.log("Sorry, you're too young");
+// }
+
+// //truthy and falsy values
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean("Jonas"));
+// console.log(Boolean({}));
+// console.log(Boolean(""));
+
+// //practical applications
+// const money = 100;
+// if (money) {
+//   console.log("Don't spend it all ;)");
+// } else {
+//   console.log("You should get a job!");
+// }
+
+// //common gotcha
+// let height = 0;
+// if (height) {
+//   console.log("YAY! Height is defined");
+// } else {
+//   console.log("Height is UNDEFINED");
+// }
+// if (height !== undefined) {
+//   console.log("Height is defined");
+// }
+
+// //exercise - truth detector
+// const values = [0, 1, "", "hello", undefined, null, NaN, {}, []];
+
+// values.forEach((val) => {
+//   console.log("Value:", val);
+//   console.log("Boolean:", Boolean(val));
+
+//   if (val) {
+//     console.log("Truthy!");
+//   } else {
+//     console.log("Falsy!");
+//   }
+// });
+
+//HOUR 4 - advanced concepts and practice
+//manual type conversion
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number("Jonas"));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+console.log(typeof String(23));
+
+// automatic type coercion
+console.log("I am " + 20 + " years old");
+console.log("20" - "10" - 3);
+console.log("20" / "2");
+console.log("20" * "2");
+console.log("20" > "18");
+
+// guess the output
+let n = "1" + 1;
+n = n - 1;
+console.log(n);
+console.log(2 + 3 + 4 + "5");
+console.log("10" - "4" - "3" - 2 + "5");
+
+//exercise 1 - conversion detective
+console.log("5" + 2);
+console.log("5" - 2);
+console.log("5" * 2);
+console.log("5" / 2);
+
+// Convert these explicitly:
+const userAge = "20";
+console.log(Number(userAge));
+
+const userScore = 95;
+console.log(String(userScore));
+
+//exercise 2 - fix the bug
+const num1 = Number(prompt("First number:")); // Convert string to number
+const num2 = Number(prompt("Second number:")); // Convert string to number
+const sum = num1 + num2; // Adds as numbers
+console.log(`Sum: ${sum}`);
+
+//equality operators
+const age = 18;
+if (age === 18) console.log("You just became an adult :D (strict)");
+if (age == 18) console.log("You just became an adult :D (loose)");
+console.log("18" == 18);
+console.log("18" === 18);
+console.log(18 === 18);
+
+// loose equality
+console.log("0" == 0);
+console.log(0 == false);
+console.log(0 === false);
+console.log(null == undefined);
+
+console.log("" == 0);
+console.log("" === 0);
+
+// best practice example
+const favourite = Number(prompt("What's your favourite number?"));
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite === 23) {
+  console.log("Cool! 23 is an amazing number!");
+} else if (favourite === 7) {
+  console.log("7 is also a cool number");
+} else if (favourite === 9) {
+  console.log("9 is also a cool number");
 } else {
-  const yearsLeft = 18 - age;
-  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+  console.log("Number is not 23 or 7 or 9");
 }
+if (favourite !== 23) console.log("Why not 23?");
 
-//variable assignment with decisions
-const birthYear2 = 2005;
+//exercise 1 - equality detective
+console.log(5 === "5");
+console.log(5 == "5");
+console.log(true === 1);
+console.log(true == 1);
+console.log(false === 0);
+console.log(false == 0);
 
-let century;
-if (birthYear <= 2000) {
-  century = 20;
+//exercise 2 - fix the login system
+const username = prompt("Username:");
+const password = prompt("Password:");
+
+if (username === "admin" && password === "1234") {
+  console.log("Welcome admin!");
 } else {
-  century = 21;
+  console.log("Access denied");
 }
-console.log(century); // 21
 
-//real world decision making
-const score = 85;
+//logical operators
+const hasDriversLicense = true;
+const hasGoodVision = true;
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
 
-if (score >= 60) {
-  console.log(`You passed with ${score} points! 🎉`);
-  console.log("Congratulations!");
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && !isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log("Sarah is able to drive!");
 } else {
-  const pointsNeeded = 60 - score;
-  console.log(`You failed. Need ${pointsNeeded} more points.`);
+  console.log("Someone else should drive...");
 }
-
-//exercise 1 - grade calculator
-const testScore = 78;
-
-if (testScore >= 90) {
-  console.log("Excellent! Grade A");
-} else if (testScore >= 80) {
-  console.log("Good job! Grade B");
-} else if (testScore >= 70) {
-  console.log("Not bad! Grade C");
-} else if (testScore >= 60) {
-  console.log("You passed! Grade D");
-} else {
-  console.log("You failed! Study harder");
-}
-
-//exercise 2 - age verification
-const userAge = 20;
-
-if (userAge >= 18) {
-  console.log("Welcome! You can access all content");
-} else if (userAge >= 13) {
-  console.log("Welcome! Restricted content only");
-} else {
-  console.log("Sorry, you're too young");
-}
-
-//truthy and falsy values
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean("Jonas"));
-console.log(Boolean({}));
-console.log(Boolean(""));
-
-//practical applications
-const money = 100;
-if (money) {
-  console.log("Don't spend it all ;)");
-} else {
-  console.log("You should get a job!");
-}
-
-//common gotcha
-let height = 0;
-if (height) {
-  console.log("YAY! Height is defined");
-} else {
-  console.log("Height is UNDEFINED");
-}
-if (height !== undefined) {
-  console.log("Height is defined");
-}
-
-//exercise - truth detector
-const values = [0, 1, "", "hello", undefined, null, NaN, {}, []];
-
-values.forEach((val) => {
-  console.log("Value:", val);
-  console.log("Boolean:", Boolean(val));
-
-  if (val) {
-    console.log("Truthy!");
-  } else {
-    console.log("Falsy!");
-  }
-});
-
