@@ -308,3 +308,21 @@ if (height) {
 } else {
   console.log("Height is UNDEFINED");
 }
+if (height !== undefined) {
+  console.log("Height is defined");
+}
+
+//exercise - truth detector
+const values = [0, 1, "", "hello", undefined, null, NaN, {}, []];
+
+values.forEach((val) => {
+  console.log("Value:", val);
+  console.log("Boolean:", Boolean(val));
+
+  if (val) {
+    console.log("Truthy!");
+  } else {
+    console.log("Falsy!");
+  }
+});
+
