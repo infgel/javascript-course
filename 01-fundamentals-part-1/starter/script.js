@@ -237,3 +237,74 @@ if (age >= 18) {
   const yearsLeft = 18 - age;
   console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
 }
+
+//variable assignment with decisions
+const birthYear2 = 2005;
+
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century); // 21
+
+//real world decision making
+const score = 85;
+
+if (score >= 60) {
+  console.log(`You passed with ${score} points! 🎉`);
+  console.log("Congratulations!");
+} else {
+  const pointsNeeded = 60 - score;
+  console.log(`You failed. Need ${pointsNeeded} more points.`);
+}
+
+//exercise 1 - grade calculator
+const testScore = 78;
+
+if (testScore >= 90) {
+  console.log("Excellent! Grade A");
+} else if (testScore >= 80) {
+  console.log("Good job! Grade B");
+} else if (testScore >= 70) {
+  console.log("Not bad! Grade C");
+} else if (testScore >= 60) {
+  console.log("You passed! Grade D");
+} else {
+  console.log("You failed! Study harder");
+}
+
+//exercise 2 - age verification
+const userAge = 20;
+
+if (userAge >= 18) {
+  console.log("Welcome! You can access all content");
+} else if (userAge >= 13) {
+  console.log("Welcome! Restricted content only");
+} else {
+  console.log("Sorry, you're too young");
+}
+
+//truthy and falsy values
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean("Jonas"));
+console.log(Boolean({}));
+console.log(Boolean(""));
+
+//practical applications
+const money = 100;
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log("You should get a job!");
+}
+
+//common gotcha
+let height = 0;
+if (height) {
+  console.log("YAY! Height is defined");
+} else {
+  console.log("Height is UNDEFINED");
+}
