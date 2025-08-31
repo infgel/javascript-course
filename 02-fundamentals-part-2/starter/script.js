@@ -478,27 +478,94 @@
 
 // PART 2 - HOUR 4: DOM MANIPULATION AND INTERACTIVITY
 // query selectors - uses css selectors
+// const message = document.querySelector(".message");
+// console.log(message);
+
+// const button = document.querySelector("#btn");
+// console.log(button);
+
+// const heading = document.querySelector("h1");
+// console.log(heading);
+
+// console.log(message.textContent);
+// console.log(button.id);
+// console.log(heading.tagName);
+// console.log(heading.textContent);
+
+// // get element by ID
+// const buttonById = document.getElementById("btn");
+// console.log(buttonById);
+// console.log(buttonById === button); // true
+
+
+// // query selector all - multiple elements
+// const allParagraphs = document.querySelectorAll("p");
+// console.log(allParagraphs);
+// console.log(allParagraphs[0]);
+
+// modifying element content
 const message = document.querySelector(".message");
-console.log(message);
+console.log(message.textContent);
+message.textContent = "Hello From JavaScript!";
+console.log(message.textContent);
+
+// innerHTML
+message.innerHTML = "<strong>Bold Text From JS!</strong>";
+
+// innerText
+console.log(message.innerText);
+
+// input element values
+const input = document.querySelector(".guess");
+console.log(input.value);
+input.value = "Default Text";
+
+// dynamic style changes
+const heading = document.querySelector("h1");
+
+heading.style.color = "red";
+heading.style.backgroundColor = "yellow"; // Note: camelCase!
+heading.style.fontSize = "3rem";
+heading.style.padding = "20px";
+heading.style.borderRadius = "10px";
 
 const button = document.querySelector("#btn");
-console.log(button);
+button.style.backgroundColor = "Gray";
+button.style.color = "white";
+button.style.fontSize = "1.5rem";
+button.style.padding = "10px 20px";
+button.style.border = "none";
+button.style.borderRadius = "5px";
 
-const heading = document.querySelector("h1");
-console.log(heading);
+// addEventListener
+button.addEventListener("click", function () {
+    console.log("Button was clicked!");
+    message.textContent = "You clicked the button!";
+    message.style.color = "green";
+});
 
-console.log(message.textContent);
-console.log(button.id);
-console.log(heading.tagName);
-console.log(heading.textContent);
+let clickCount = 0;
 
-// get element by ID
-const buttonById = document.getElementById("btn");
-console.log(buttonById);
-console.log(buttonById === button); // true
+button.addEventListener("click", function () {
+    clickCount++;
+    button.textContent = `Clicked ${clickCount} times`;
+    button.style.backgroundColor = `hsl(${clickCount * 30}, 70%, 50%)`;
+});
 
+// input events
+const display = document.querySelector(".message");
+input.addEventListener("input", function () {
+    const userText = input.value;
+    display.textContent = `You typed ${userText}`;
+    display.style.fontSize = `${userText.length + 10}px`;
+});
 
-// query selector all - multiple elements
-const allParagraphs = document.querySelectorAll("p");
-console.log(allParagraphs);
-console.log(allParagraphs[0]);
+// keyboard events - responds to specific keys
+input.addEventListener("keydown", function (event) {
+    console.log(`Key pressed: ${event.key}`);
+    if (event.key === "Enter") {
+        display.textContent = `You pressed Enter! Text was ${input.value}`;
+       input.value = "";
+    }
+});
+
