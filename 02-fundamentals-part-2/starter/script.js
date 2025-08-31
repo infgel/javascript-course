@@ -271,94 +271,207 @@ console.log(`Passing students: ${passing} out of ${grades.length}`);
 // PART 2 - HOUR 3: OBJECTS AND DATA STRUCTURES
 // array limitation
 
-const angelArray = [
-    "Angel",
-    "Fernando",
-    2025 - 2005,
-    "studeny",
-    ["Gwen", "Rain", "Fons"],
-];
+// const angelArray = [
+//     "Angel",
+//     "Fernando",
+//     2025 - 2005,
+//     "studeny",
+//     ["Gwen", "Rain", "Fons"],
+// ];
 
-console.log(angelArray[0]);
-console.log(angelArray[1]);
-console.log(angelArray[2]);
+// console.log(angelArray[0]);
+// console.log(angelArray[1]);
+// console.log(angelArray[2]);
 
-// basic object creation
-console.log("=== OBJECTS ===");
+// // basic object creation
+// console.log("=== OBJECTS ===");
 
+// const angel = {
+//     firstName: "Angel",
+//     lastName: "Fernando",
+//     age: 2025-2005,
+//     job: "student",
+//     friends: ["Gwen", "Rain", "Fons"],
+// };
+// console.log(angel);
+
+// //property access notation
+// // dot notation
+// console.log(angel.firstName);
+// console.log(angel.lastName);
+// console.log(angel.age);
+// console.log(angel.job);
+// console.log(angel.friends);
+
+// // bracket notation
+// console.log(angel["firstName"]);
+// console.log(angel["lastName"]);
+// console.log(angel["age"]);
+
+// //bracket notation superpower
+// const nameKey = "Name";
+// console.log(angel["first" + nameKey]);
+// console.log(angel["last" + nameKey]);
+
+// // modifying existing properties
+// angel.job = "programmer";
+// angel["age"] = 20;
+// console.log(angel);
+
+// // objects can grow - add properties
+// angel.location = "Philippines";
+// angel["twitter"] = "@angelfaith";
+// angel.hasDriversLicense = true;
+// console.log(angel);
+
+// // when to use dot vs bracket notation
+// const property = "job";
+// console.log(angel[property]);
+
+// // objects vs arrays
+// // Ordered, indexed data - think lists
+// const listOfYears = [1991, 1984, 2008, 2020];
+// const shoppingList = ["apples", "bananas", "milk", "bread"];
+// const testScores = [85, 92, 78, 96];
+
+// // Named, descriptive data
+// const person = {
+//     name: "Angel",
+//     age: 20,
+//     occupation: "student",
+// };
+
+// const car = {
+//     brand: "Toyota",
+//     model: "Camry",
+//     year: 2020,
+//     color: "white",
+// };
+
+// // combining objects and arrays
+// const student = {
+//     name: "Angel",
+//     grades: [85, 92, 78],
+//     address: {
+//     street: "Jhocson St",
+//     city: "Manila",
+//     },
+// };
+
+// console.log(student.grades[0]);
+// console.log(student.address.city);
+
+// object methods
 const angel = {
     firstName: "Angel",
     lastName: "Fernando",
-    age: 2025-2005,
+    birthYear: 2005,
     job: "student",
     friends: ["Gwen", "Rain", "Fons"],
-};
-console.log(angel);
+    hasDriversLicense: true,
 
-//property access notation
-// dot notation
-console.log(angel.firstName);
-console.log(angel.lastName);
-console.log(angel.age);
-console.log(angel.job);
-console.log(angel.friends);
-
-// bracket notation
-console.log(angel["firstName"]);
-console.log(angel["lastName"]);
-console.log(angel["age"]);
-
-//bracket notation superpower
-const nameKey = "Name";
-console.log(angel["first" + nameKey]);
-console.log(angel["last" + nameKey]);
-
-// modifying existing properties
-angel.job = "programmer";
-angel["age"] = 20;
-console.log(angel);
-
-// objects can grow - add properties
-angel.location = "Philippines";
-angel["twitter"] = "@angelfaith";
-angel.hasDriversLicense = true;
-console.log(angel);
-
-// when to use dot vs bracket notation
-const property = "job";
-console.log(angel[property]);
-
-// objects vs arrays
-// Ordered, indexed data - think lists
-const listOfYears = [1991, 1984, 2008, 2020];
-const shoppingList = ["apples", "bananas", "milk", "bread"];
-const testScores = [85, 92, 78, 96];
-
-// Named, descriptive data
-const person = {
-    name: "Angel",
-    age: 20,
-    occupation: "student",
-};
-
-const car = {
-    brand: "Toyota",
-    model: "Camry",
-    year: 2020,
-    color: "white",
-};
-
-// combining objects and arrays
-const student = {
-    name: "Angel",
-    grades: [85, 92, 78],
-    address: {
-    street: "Jhocson St",
-    city: "Manila",
+    calcAge: function (birthYear) {
+        return 2025 - birthYear;
     },
 };
 
-console.log(student.grades[0]);
-console.log(student.address.city);
+console.log(angel.calcAge(2005));
 
-// object methods
+// this keyword
+const angelImproved = {
+    firstName: "Angel",
+    lastName: "Fernando",
+    birthYear: 2005,
+    job: "student",
+    friends: ["Gwen", "Rain", "Fons"],
+    hasDriversLicense: true,
+
+    calcAge: function () {
+    console.log(this);
+    return 2025 - this.birthYear;
+    },
+};
+
+console.log(angelImproved.calcAge());
+
+// advanced storing
+const angelAdvanced = {
+    firstName: "Angel",
+    lastName: "Fernando",
+    birthYear: 2005,
+    job: "student",
+    friends: ["Gwen", "Rain", "Fons"],
+    hasDriversLicense: true,
+
+    calcAge: function () {
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+        this.job
+        }, and she has ${this.hasDriversLicense ? "a" : "no"} drivers license.`;
+    },
+};
+
+console.log(angelAdvanced.calcAge());
+console.log(angelAdvanced.age);
+console.log(angelAdvanced.getSummary());
+
+// Coding Challenge #3 - User Profile System
+const user = {
+    firstName: "Angel",
+    lastName: "Fernando",
+    birthYear: 2005,
+    location: "Philippines",
+    interests: ["design", "coding", "travel"],
+    friends: [
+        { name: "Gwen", status: "active" },
+        { name: "Rain", status: "inactive" },
+        { name: "Fons", status: "active" },
+    ],
+    isActive: true,
+
+    calcAge: function () {
+        const currentYear = new Date().getFullYear();
+        this.age = currentYear - this.birthYear;
+    return this.age;
+    },
+
+    addFriend: function (name, status = "active") {
+        this.friends.push({ name, status });
+        return this.friends.length;
+    },
+
+    getActiveFriends: function () {
+        return this.friends.filter(friend => friend.status === "active").length;
+    },
+
+    toggleStatus: function () {
+        this.isActive = !this.isActive;
+        return this.isActive;
+    },
+
+    getSummary: function () {
+        this.calcAge();
+        return `
+    ----- User Profile -----
+    ${this.firstName} ${this.lastName}
+    ${this.age}
+    ${this.location}
+    ${this.isActive ? "Online ✅" : "Offline ❌"}
+    ${this.interests.join(", ")}
+    ${this.friends.length} total | ${this.getActiveFriends()} active
+    ------------------------
+        `;
+    },
+};
+
+console.log(user.getSummary());
+user.addFriend("Alex", "active");
+user.toggleStatus();
+console.log(`After updates:`);
+console.log(user.getSummary());
+
+// JavaScript Fundamentals Part 2 - Hour 3
