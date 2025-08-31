@@ -267,3 +267,98 @@ console.log(`Lowest: ${lowest}`);
 console.log(`Passing students: ${passing} out of ${grades.length}`);
 
 // JavaScript Fundamentals Part 2 - Hour 2
+
+// PART 2 - HOUR 3: OBJECTS AND DATA STRUCTURES
+// array limitation
+
+const angelArray = [
+    "Angel",
+    "Fernando",
+    2025 - 2005,
+    "studeny",
+    ["Gwen", "Rain", "Fons"],
+];
+
+console.log(angelArray[0]);
+console.log(angelArray[1]);
+console.log(angelArray[2]);
+
+// basic object creation
+console.log("=== OBJECTS ===");
+
+const angel = {
+    firstName: "Angel",
+    lastName: "Fernando",
+    age: 2025-2005,
+    job: "student",
+    friends: ["Gwen", "Rain", "Fons"],
+};
+console.log(angel);
+
+//property access notation
+// dot notation
+console.log(angel.firstName);
+console.log(angel.lastName);
+console.log(angel.age);
+console.log(angel.job);
+console.log(angel.friends);
+
+// bracket notation
+console.log(angel["firstName"]);
+console.log(angel["lastName"]);
+console.log(angel["age"]);
+
+//bracket notation superpower
+const nameKey = "Name";
+console.log(angel["first" + nameKey]);
+console.log(angel["last" + nameKey]);
+
+// modifying existing properties
+angel.job = "programmer";
+angel["age"] = 20;
+console.log(angel);
+
+// objects can grow - add properties
+angel.location = "Philippines";
+angel["twitter"] = "@angelfaith";
+angel.hasDriversLicense = true;
+console.log(angel);
+
+// when to use dot vs bracket notation
+const property = "job";
+console.log(angel[property]);
+
+// objects vs arrays
+// Ordered, indexed data - think lists
+const listOfYears = [1991, 1984, 2008, 2020];
+const shoppingList = ["apples", "bananas", "milk", "bread"];
+const testScores = [85, 92, 78, 96];
+
+// Named, descriptive data
+const person = {
+    name: "Angel",
+    age: 20,
+    occupation: "student",
+};
+
+const car = {
+    brand: "Toyota",
+    model: "Camry",
+    year: 2020,
+    color: "white",
+};
+
+// combining objects and arrays
+const student = {
+    name: "Angel",
+    grades: [85, 92, 78],
+    address: {
+    street: "Jhocson St",
+    city: "Manila",
+    },
+};
+
+console.log(student.grades[0]);
+console.log(student.address.city);
+
+// object methods
