@@ -215,56 +215,56 @@
 
 // coding challenge #2 - student grade manager
 
-const grades = [78, 85, 92, 67, 88, 95, 73, 82];
+// const grades = [78, 85, 92, 67, 88, 95, 73, 82];
 
-function calculateAverage(grades) {
-    let sum = 0;
-    for (let i = 0; i < grades.length; i++) {
-    sum += grades[i];
-    }
-return sum / grades.length;
-}
+// function calculateAverage(grades) {
+//     let sum = 0;
+//     for (let i = 0; i < grades.length; i++) {
+//     sum += grades[i];
+//     }
+// return sum / grades.length;
+// }
 
-function findHighestGrade(grades) {
-    let highest = grades[0];
-    for (let i = 1; i < grades.length; i++) {
-    if (grades[i] > highest) {
-        highest = grades[i];
-    }
-    }
-return highest;
-}
+// function findHighestGrade(grades) {
+//     let highest = grades[0];
+//     for (let i = 1; i < grades.length; i++) {
+//     if (grades[i] > highest) {
+//         highest = grades[i];
+//     }
+//     }
+// return highest;
+// }
 
-function findLowestGrade(grades) {
-    let lowest = grades[0];
-    for (let i = 1; i < grades.length; i++) {
-    if (grades[i] < lowest) {
-        lowest = grades[i];
-    }
-}
-return lowest;
-}
+// function findLowestGrade(grades) {
+//     let lowest = grades[0];
+//     for (let i = 1; i < grades.length; i++) {
+//     if (grades[i] < lowest) {
+//         lowest = grades[i];
+//     }
+// }
+// return lowest;
+// }
 
-function countPassing(grades, passingGrade) {
-let count = 0;
-    for (let i = 0; i < grades.length; i++) {
-    if (grades[i] >= passingGrade) {
-        count++;
-    }
-    }
-return count;
-}
+// function countPassing(grades, passingGrade) {
+// let count = 0;
+//     for (let i = 0; i < grades.length; i++) {
+//     if (grades[i] >= passingGrade) {
+//         count++;
+//     }
+//     }
+// return count;
+// }
 
-const average = calculateAverage(grades);
-const highest = findHighestGrade(grades);
-const lowest = findLowestGrade(grades);
-const passing = countPassing(grades, 70);
+// const average = calculateAverage(grades);
+// const highest = findHighestGrade(grades);
+// const lowest = findLowestGrade(grades);
+// const passing = countPassing(grades, 70);
 
-console.log("=== GRADE REPORT ===");
-console.log(`Average: ${average.toFixed(1)}`);
-console.log(`Highest: ${highest}`);
-console.log(`Lowest: ${lowest}`);
-console.log(`Passing students: ${passing} out of ${grades.length}`);
+// console.log("=== GRADE REPORT ===");
+// console.log(`Average: ${average.toFixed(1)}`);
+// console.log(`Highest: ${highest}`);
+// console.log(`Lowest: ${lowest}`);
+// console.log(`Passing students: ${passing} out of ${grades.length}`);
 
 // JavaScript Fundamentals Part 2 - Hour 2
 
@@ -362,116 +362,143 @@ console.log(`Passing students: ${passing} out of ${grades.length}`);
 // console.log(student.address.city);
 
 // object methods
-const angel = {
-    firstName: "Angel",
-    lastName: "Fernando",
-    birthYear: 2005,
-    job: "student",
-    friends: ["Gwen", "Rain", "Fons"],
-    hasDriversLicense: true,
+// const angel = {
+//     firstName: "Angel",
+//     lastName: "Fernando",
+//     birthYear: 2005,
+//     job: "student",
+//     friends: ["Gwen", "Rain", "Fons"],
+//     hasDriversLicense: true,
 
-    calcAge: function (birthYear) {
-        return 2025 - birthYear;
-    },
-};
+//     calcAge: function (birthYear) {
+//         return 2025 - birthYear;
+//     },
+// };
 
-console.log(angel.calcAge(2005));
+// console.log(angel.calcAge(2005));
 
-// this keyword
-const angelImproved = {
-    firstName: "Angel",
-    lastName: "Fernando",
-    birthYear: 2005,
-    job: "student",
-    friends: ["Gwen", "Rain", "Fons"],
-    hasDriversLicense: true,
+// // this keyword
+// const angelImproved = {
+//     firstName: "Angel",
+//     lastName: "Fernando",
+//     birthYear: 2005,
+//     job: "student",
+//     friends: ["Gwen", "Rain", "Fons"],
+//     hasDriversLicense: true,
 
-    calcAge: function () {
-    console.log(this);
-    return 2025 - this.birthYear;
-    },
-};
+//     calcAge: function () {
+//     console.log(this);
+//     return 2025 - this.birthYear;
+//     },
+// };
 
-console.log(angelImproved.calcAge());
+// console.log(angelImproved.calcAge());
 
-// advanced storing
-const angelAdvanced = {
-    firstName: "Angel",
-    lastName: "Fernando",
-    birthYear: 2005,
-    job: "student",
-    friends: ["Gwen", "Rain", "Fons"],
-    hasDriversLicense: true,
+// // advanced storing
+// const angelAdvanced = {
+//     firstName: "Angel",
+//     lastName: "Fernando",
+//     birthYear: 2005,
+//     job: "student",
+//     friends: ["Gwen", "Rain", "Fons"],
+//     hasDriversLicense: true,
 
-    calcAge: function () {
-        this.age = 2025 - this.birthYear;
-        return this.age;
-    },
+//     calcAge: function () {
+//         this.age = 2025 - this.birthYear;
+//         return this.age;
+//     },
 
-    getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${
-        this.job
-        }, and she has ${this.hasDriversLicense ? "a" : "no"} drivers license.`;
-    },
-};
+//     getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//         this.job
+//         }, and she has ${this.hasDriversLicense ? "a" : "no"} drivers license.`;
+//     },
+// };
 
-console.log(angelAdvanced.calcAge());
-console.log(angelAdvanced.age);
-console.log(angelAdvanced.getSummary());
+// console.log(angelAdvanced.calcAge());
+// console.log(angelAdvanced.age);
+// console.log(angelAdvanced.getSummary());
 
-// Coding Challenge #3 - User Profile System
-const user = {
-    firstName: "Angel",
-    lastName: "Fernando",
-    birthYear: 2005,
-    location: "Philippines",
-    interests: ["design", "coding", "travel"],
-    friends: [
-        { name: "Gwen", status: "active" },
-        { name: "Rain", status: "inactive" },
-        { name: "Fons", status: "active" },
-    ],
-    isActive: true,
+// // Coding Challenge #3 - User Profile System
+// const user = {
+//     firstName: "Angel",
+//     lastName: "Fernando",
+//     birthYear: 2005,
+//     location: "Philippines",
+//     interests: ["design", "coding", "travel"],
+//     friends: [
+//         { name: "Gwen", status: "active" },
+//         { name: "Rain", status: "inactive" },
+//         { name: "Fons", status: "active" },
+//     ],
+//     isActive: true,
 
-    calcAge: function () {
-        const currentYear = new Date().getFullYear();
-        this.age = currentYear - this.birthYear;
-    return this.age;
-    },
+//     calcAge: function () {
+//         const currentYear = new Date().getFullYear();
+//         this.age = currentYear - this.birthYear;
+//     return this.age;
+//     },
 
-    addFriend: function (name, status = "active") {
-        this.friends.push({ name, status });
-        return this.friends.length;
-    },
+//     addFriend: function (name, status = "active") {
+//         this.friends.push({ name, status });
+//         return this.friends.length;
+//     },
 
-    getActiveFriends: function () {
-        return this.friends.filter(friend => friend.status === "active").length;
-    },
+//     getActiveFriends: function () {
+//         return this.friends.filter(friend => friend.status === "active").length;
+//     },
 
-    toggleStatus: function () {
-        this.isActive = !this.isActive;
-        return this.isActive;
-    },
+//     toggleStatus: function () {
+//         this.isActive = !this.isActive;
+//         return this.isActive;
+//     },
 
-    getSummary: function () {
-        this.calcAge();
-        return `
-    ----- User Profile -----
-    ${this.firstName} ${this.lastName}
-    ${this.age}
-    ${this.location}
-    ${this.isActive ? "Online ✅" : "Offline ❌"}
-    ${this.interests.join(", ")}
-    ${this.friends.length} total | ${this.getActiveFriends()} active
-    ------------------------
-        `;
-    },
-};
+//     getSummary: function () {
+//         this.calcAge();
+//         return `
+//     ----- User Profile -----
+//     ${this.firstName} ${this.lastName}
+//     ${this.age}
+//     ${this.location}
+//     ${this.isActive ? "Online ✅" : "Offline ❌"}
+//     ${this.interests.join(", ")}
+//     ${this.friends.length} total | ${this.getActiveFriends()} active
+//     ------------------------
+//         `;
+//     },
+// };
 
-console.log(user.getSummary());
-user.addFriend("Alex", "active");
-user.toggleStatus();
-console.log(`After updates:`);
-console.log(user.getSummary());
+// console.log(user.getSummary());
+// user.addFriend("Alex", "active");
+// user.toggleStatus();
+// console.log(`After updates:`);
+// console.log(user.getSummary());
 
-// JavaScript Fundamentals Part 2 - Hour 3
+// // JavaScript Fundamentals Part 2 - Hour 3
+
+// PART 2 - HOUR 4: DOM MANIPULATION AND INTERACTIVITY
+// query selectors - uses css selectors
+const message = document.querySelector(".message");
+console.log(message);
+
+const button = document.querySelector("#btn");
+console.log(button);
+
+const heading = document.querySelector("h1");
+console.log(heading);
+
+console.log(message.textContent);
+console.log(button.id);
+console.log(heading.tagName);
+console.log(heading.textContent);
+
+// get element by ID
+const buttonById = document.getElementById("btn");
+console.log(buttonById);
+console.log(buttonById === button); // true
+
+
+// query selector all - multiple elements
+const allParagraphs = document.querySelectorAll("p");
+console.log(allParagraphs);
+console.log(allParagraphs[0]);
